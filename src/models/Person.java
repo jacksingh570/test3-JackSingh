@@ -43,9 +43,23 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
+        firstName = firstName.trim();
+        if(firstName.length() >= 2){
+            firstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
+            this.firstName = firstName;
+        }else{
+            throw new IllegalArgumentException("There must be at least 2 blank spaces");
+        }
     }
 
     public void setLastName(String lastName) {
+        lastName = lastName.trim();
+        if(lastName.length() >= 2){
+            lastName = lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
+            this.lastName = lastName;
+        }else{
+            throw new IllegalArgumentException("There must be at least 2 blank spaces");
+        }
     }
 
     public void setBirthday(LocalDate birthday) {
