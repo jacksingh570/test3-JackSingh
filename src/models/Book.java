@@ -56,6 +56,16 @@ public class Book {
 
     public void checkOutBook(Person libraryPatron, LocalDate dueDate)
     {
+        if(isAvailable()){
+            if(dueDate.isAfter(LocalDate.now())){
+                this.returnDate = dueDate;
+                this.libraryPatron = libraryPatron;
+            }else{
+                throw new IllegalArgumentException("Due date cannot be in the past from checkout day!");
+            }
+        }else{
+            throw new IllegalArgumentException("Book not available");
+        }
     }
 
     public LocalDate getReturnDate()
@@ -65,7 +75,11 @@ public class Book {
 
     public boolean isAvailable()
     {
-        return false;
+        if(returnDate == null){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 
