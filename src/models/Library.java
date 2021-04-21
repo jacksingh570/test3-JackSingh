@@ -45,7 +45,11 @@ public class Library {
 
     public double getValueOfBooks()
     {
-        return -1;
+        int count= 0;
+        for(int i = 0; i < books.size(); i++){
+            count += count;
+        }
+        throw new IllegalArgumentException("there are " + count + "books");
     }
 
     public void checkOutBook(Book book, Person patron, LocalDate dueDate)
