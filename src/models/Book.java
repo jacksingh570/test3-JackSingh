@@ -15,6 +15,9 @@ public class Book {
     private Person libraryPatron;
 
     public Book(String title, Person author, double price) {
+        setTitle(title);
+        setAuthor(author);
+        setPrice(price);
     }
 
     public String getTitle() {
@@ -44,6 +47,11 @@ public class Book {
     }
 
     public void setPrice(double price) {
+        if (price >= 0) {
+            this.price = price;
+        }else{
+            throw new IllegalArgumentException("Price must be greater than zero");
+        }
     }
 
     public void checkOutBook(Person libraryPatron, LocalDate dueDate)
