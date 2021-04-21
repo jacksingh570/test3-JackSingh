@@ -26,14 +26,16 @@ public class Library {
 
     public ArrayList<Person> getAuthors()
     {
+        //incomplete
         ArrayList<Person> authors = new ArrayList<Person>();
         List<Person> noDuplicates = authors.stream().distinct().collect(Collectors.toList());
         return new ArrayList<>();
     }
 
     public ArrayList<Book> getBooksByAuthor(Person author){
-
-        return new ArrayList<>();
+        //incomplete
+        ArrayList<Book> booksByAuthor = new ArrayList<Book>();
+        return booksByAuthor;
     }
 
     public int getNumOfBooks()
