@@ -9,6 +9,8 @@ package models;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Library {
     private ArrayList<Book> books;
@@ -24,10 +26,13 @@ public class Library {
 
     public ArrayList<Person> getAuthors()
     {
+        ArrayList<Person> authors = new ArrayList<Person>();
+        List<Person> noDuplicates = authors.stream().distinct().collect(Collectors.toList());
         return new ArrayList<>();
     }
 
     public ArrayList<Book> getBooksByAuthor(Person author){
+
         return new ArrayList<>();
     }
 
@@ -43,6 +48,7 @@ public class Library {
 
     public void checkOutBook(Book book, Person patron, LocalDate dueDate)
     {
+
     }
 
     public ArrayList<Book> getCheckedOutBooks()
