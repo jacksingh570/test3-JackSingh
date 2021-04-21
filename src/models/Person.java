@@ -71,6 +71,18 @@ public class Person {
     }
 
     public void setGender(String gender) {
+        gender = gender.toLowerCase();
+        if(gender.equals("f") || gender.equals("m") || gender.equals("o")){
+            if(gender.equals("f")){
+                this.gender = "female";
+            }else if(gender.equals("m")){
+                this.gender = "male";
+            }else if(gender.equals("o")){
+                this.gender = "other";
+            }
+        }else{
+            throw new IllegalArgumentException("Your input is not valid");
+        }
     }
   
     public void setEmail(String email) {
