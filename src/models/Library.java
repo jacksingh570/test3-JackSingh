@@ -54,7 +54,11 @@ public class Library {
 
     public void checkOutBook(Book book, Person patron, LocalDate dueDate)
     {
-
+        if (book.isAvailable()){
+           // book.checkOutBook();
+        }else{
+            throw new IllegalArgumentException("Book not available");
+        }
     }
 
     public ArrayList<Book> getCheckedOutBooks()
