@@ -33,7 +33,7 @@ public class Library {
     }
 
     public ArrayList<Book> getBooksByAuthor(Person author){
-        //incomplete
+        //incomplete/incorrect
         ArrayList<Book> booksByAuthor = new ArrayList<Book>();
         return booksByAuthor;
     }
