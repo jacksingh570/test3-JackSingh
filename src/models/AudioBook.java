@@ -21,7 +21,7 @@ public class AudioBook extends Book {
         if (lengthInSec >= 0){
             this.lengthInSec = lengthInSec;
         }else{
-            throw new IllegalArgumentException("A book must have a length in Seconds");
+            throw new IllegalArgumentException("A book must have a length in Seconds, cannot be negative");
         }
     }
 }
