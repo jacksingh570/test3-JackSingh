@@ -85,6 +85,10 @@ public class Book {
 
     public String toString()
     {
-        return null;
+        if (isAvailable() == true){
+            return title + " by " + author + " is available";
+        }else {
+            return title + " by " + author + "is not available";
+        }
     }
 }
