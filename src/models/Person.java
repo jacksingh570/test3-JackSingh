@@ -86,11 +86,16 @@ public class Person {
     }
   
     public void setEmail(String email) {
+        if(email.isEmpty()){
+            throw new IllegalArgumentException("The email cannot be empty");
+        }else{
+            this.email = email;
+        }
     }
 
     public String getInitials()
     {
-        return null;
+        return (firstName.substring(0, 1)+ "." + lastName.substring(0, 1) + ".");
     }
 
     public int getAge()
