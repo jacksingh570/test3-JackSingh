@@ -63,6 +63,11 @@ public class Person {
     }
 
     public void setBirthday(LocalDate birthday) {
+        if(birthday.isAfter(LocalDate.now())){
+            throw new IllegalArgumentException("Birthday can't be in the future!");
+        }else{
+            this.birthday = birthday;
+        }
     }
 
     public void setGender(String gender) {
@@ -78,7 +83,7 @@ public class Person {
 
     public int getAge()
     {
-        return -1;
+        return Period.between(birthday, LocalDate.now()).getYears();
     }
     
     @Override
