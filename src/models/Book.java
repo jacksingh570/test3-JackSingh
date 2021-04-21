@@ -22,6 +22,13 @@ public class Book {
     }
 
     public void setTitle(String bookName) {
+        bookName = bookName.trim();
+        if(bookName.length() >= 2){
+            this.title = bookName;
+        }else{
+            throw new IllegalArgumentException("Must be greater than 2!");
+        }
+
     }
 
     public Person getAuthor() {
